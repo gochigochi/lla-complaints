@@ -3,19 +3,31 @@ const db = require("./index")
 
 const Complaint = db.define("complaint",
     {
-        user: {
+        full_name: {
+            type: DataTypes.STRING
+        },
+        dni: {
+            type: DataTypes.STRING
+        },
+        school: {
             type: DataTypes.STRING
         },
         table: {
-            type: DataTypes.INTEGER
+            type: DataTypes.STRING
+        },
+        city: {
+            type: DataTypes.STRING
+        },
+        province: {
+            type: DataTypes.STRING
+        },
+        postal_code: {
+            type: DataTypes.STRING
         },
         complaint: {
             type: DataTypes.STRING
         }
     },
-    // {
-    //     freezeTableName: true
-    // }
 )
 
 module.exports = Complaint

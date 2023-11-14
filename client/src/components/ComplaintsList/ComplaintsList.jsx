@@ -1,19 +1,22 @@
-import { useEffect, useState } from "react"
-import useFetch from "../../hooks/useFetch"
+import fetchData from "../../utils/fetchData"
+
+const complaints = fetchData("http://localhost:3000/complaints", {})
 
 const ComplaintsList = () => {
 
-    const [ data, loading ] = useFetch("http://localhost:3000/complaints")
-    const [ complaints, setComplaints ] = useState(data)
-
-    useEffect(() => {
-        if (data) setComplaints(data)
-    }, [data])
-
-    console.log(data)
-
     return (
-        <div>ComplaintsList</div>
+        <div>
+            <h1>Lista de denuncias</h1>
+            <ul>
+                {
+                    complaints?.read().map(complaint => {
+                        return (
+                            <div>{complaint.user}</div>
+                        )
+                    })
+                }
+            </ul>
+        </div>
     )
 }
 

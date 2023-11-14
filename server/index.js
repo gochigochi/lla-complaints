@@ -19,11 +19,11 @@ const syncDb = async () => {
 
 syncDb()
 
-//USE MIDDLEWARE TO ACCESS THE REQ OBJECT IN THE ROUTEs
-//express.json() checks if there is a body in the request sent to the server.
-//If yes, it parses the body and attaches the parsed body to the request.
-//Then we can grab it in the req object in an route
+//Note 3
 app.use(express.json())
+
+//Note 4
+app.use(cors())
 
 app.use(express.urlencoded({ extended: true }))
 
