@@ -1,6 +1,7 @@
 {
   "name": "client",
   "private": true,
+  "homepage": "http://wemix.wiz.com.ar/apps/vite-express-cpanel",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

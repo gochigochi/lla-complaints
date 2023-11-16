@@ -5,20 +5,7 @@ export const complaintAction = async ({ request }) => {
 
     const raw = await request.formData()
     const data = Object.fromEntries(raw)
-    console.log("FORM DATA.....", data)
-
-    //DUMMY DATA
-    // const data = {
-    //     city:"Bella Vista",
-    //     dni:"34156161",
-    //     full_name:"diego iovane",
-    //     postal_code:"1661",
-    //     province:"Buenos Aires",
-    //     school:"diego",
-    //     table:"iovane",
-    //     complaint:"Esta es una queja"
-    // }
-
+    
     const hasEmptyField = Object.values(data).some(el => el === "")
 
     if (hasEmptyField) return { error: true, errorMsg: "Hay campos vacíos." }
@@ -44,8 +31,6 @@ export const complaintAction = async ({ request }) => {
     })
 
     const json = await response.json()
-
-    // console.log("JSON.........", json)
 
     return { success: true, data: json }
 }

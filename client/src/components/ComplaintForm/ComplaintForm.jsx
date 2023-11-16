@@ -173,7 +173,7 @@ const ComplaintForm = () => {
                             Enviar
                         </button>
                     </div>
-                    {/* <span className={`text-sm text-red-600 ${!response?.error && "hidden"}`}>error</span> */}
+                    <span className={`text-sm text-red-600 ${!response?.error && "hidden"}`}>error</span>
                 </Form>
             </div>
         </ErrorBoundary>
